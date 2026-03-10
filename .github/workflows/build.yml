@@ -7,14 +7,15 @@ on:
 
 jobs:
   build-mac:
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python (x86_64 via Rosetta)
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          architecture: 'x64'
 
       - name: Install dependencies
         run: pip install Pillow pyinstaller
