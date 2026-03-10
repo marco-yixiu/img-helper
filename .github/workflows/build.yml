@@ -22,6 +22,7 @@ jobs:
       - name: Build
         run: |
           python -m PyInstaller --onefile --windowed \
+            --target-architecture arm64 \
             --name "小包图片助手" \
             --clean -y run_tool.py
 
